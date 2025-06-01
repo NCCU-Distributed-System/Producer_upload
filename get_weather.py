@@ -48,14 +48,14 @@ def send_weather_all_districts():
                 }
             }
 
-            producer.send("weather-districts", weather_event)
+            producer.send("weather-data", weather_event)
             print(f"已發送：{district} → {weather_event}")
 
         except Exception as e:
             print(f"發送失敗：{district} → {e}")
 
-# 5 min get weather data 
+# 6 min get weather data 
 if __name__ == "__main__":
     while True:
         send_weather_all_districts()
-        time.sleep(300)  #5 min
+        time.sleep(600)  #6 min
