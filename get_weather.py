@@ -54,8 +54,8 @@ def send_weather_all_districts():
         except Exception as e:
             print(f"發送失敗：{district} → {e}")
 
-# 每 10 分鐘取得一次所有區的天氣資料
+# 5 min get weather data 
 if __name__ == "__main__":
     while True:
         send_weather_all_districts()
-        time.sleep(600)  # 10 分鐘（避免超過 OpenWeatherMap 免費額度）
+        time.sleep(300)  #5 min
